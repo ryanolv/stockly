@@ -1,8 +1,8 @@
 import { Plus } from "lucide-react";
 import { Button } from "../_components/ui/button";
-import { getProducts } from "../_data-access/product/get-products";
 import { columns } from "./_components/columns-table";
 import { DataTable } from "../_components/Table";
+import { getProducts } from "../_data-access/product/get-products";
 
 const ProductsPage = async () => {
   const products = await getProducts();
@@ -18,7 +18,10 @@ const ProductsPage = async () => {
           Novo Produto
         </Button>
       </div>
-      <DataTable columns={columns} data={products} />
+      <DataTable
+        columns={columns}
+        data={JSON.parse(JSON.stringify(products))}
+      />
     </div>
   );
 };
