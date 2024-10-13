@@ -7,7 +7,7 @@ import { DataTable } from "../_components/Table";
 const ProductsPage = async () => {
   const products = await getProducts();
   return (
-    <div className="mr-8 w-full space-y-5">
+    <div className="w-full space-y-5 p-8">
       <div className="mt-8 flex items-end justify-between">
         <div className="space-y-2">
           <span>Produtos</span>
