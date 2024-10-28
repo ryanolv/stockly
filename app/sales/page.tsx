@@ -1,9 +1,6 @@
-import { PlusIcon } from "lucide-react";
-import { Button } from "../_components/ui/button";
 import { ComboboxOption } from "../_components/ui/combobox";
-import { Sheet, SheetTrigger } from "../_components/ui/sheet";
 import { getProducts } from "../_data-access/product/get-products";
-import UpsertSheetContent from "./_components/upsert-sheet-content";
+import CreateSaleButton from "./_components/create-sale-button";
 
 const SalesPage = async () => {
   const products = await getProducts();
@@ -20,15 +17,7 @@ const SalesPage = async () => {
           <span>Produtos</span>
           <h2 className="text-2xl font-bold">Gestão de Vendas</h2>
         </div>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button className="gap-1">
-              <PlusIcon size={20} />
-              Adicionar Venda
-            </Button>
-          </SheetTrigger>
-          <UpsertSheetContent products={products} productOptions={options} />
-        </Sheet>
+        <CreateSaleButton products={products} productOptions={options} />
       </div>
       {/* <DataTable
         columns={columns}
