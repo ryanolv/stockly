@@ -43,4 +43,6 @@ export const createSale = async (data: CreateSaleSchema) => {
   });
 
   revalidatePath("/products");
+  revalidatePath("/sales");
+  revalidatePath("/");
 };
