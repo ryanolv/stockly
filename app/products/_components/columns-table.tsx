@@ -1,14 +1,14 @@
 "use client";
 
 import { Badge } from "@/app/_components/ui/badge";
-import { Product } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import ProductTableDropdownMenu from "./table-dropdown-menu";
+import { ProductDto } from "@/app/_data-access/product/get-products";
 
 const getStatusLabel = (status: string) =>
   status === "IN_STOCK" ? "Em estoque" : "Esgotado";
 
-export const columns: ColumnDef<Product>[] = [
+export const columns: ColumnDef<ProductDto>[] = [
   {
     accessorKey: "name",
     header: "Produto",
@@ -21,7 +21,7 @@ export const columns: ColumnDef<Product>[] = [
       return Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
-      }).format(Number(product.price));
+      }).format(product.price);
     },
   },
   {

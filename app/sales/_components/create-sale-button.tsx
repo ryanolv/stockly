@@ -5,11 +5,11 @@ import { Sheet, SheetTrigger } from "@/app/_components/ui/sheet";
 import { PlusIcon } from "lucide-react";
 import UpsertSheetContent from "./upsert-sheet-content";
 import { ComboboxOption } from "@/app/_components/ui/combobox";
-import { Product } from "@prisma/client";
 import { useState } from "react";
+import { ProductDto } from "@/app/_data-access/product/get-products";
 
 interface CreateSaleButtonProps {
-  products: Product[];
+  products: ProductDto[];
   productOptions: ComboboxOption[];
 }
 

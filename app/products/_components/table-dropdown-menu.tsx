@@ -22,10 +22,10 @@ import {
   DropdownMenuTrigger,
 } from "@/app/_components/ui/dropdown-menu";
 import { useState } from "react";
-import { Product } from "@prisma/client";
+import { ProductDto } from "@/app/_data-access/product/get-products";
 
 interface ProductTableDropdownMenuProps {
-  product: Product;
+  product: ProductDto;
 }
 
 const ProductTableDropdownMenu = ({
