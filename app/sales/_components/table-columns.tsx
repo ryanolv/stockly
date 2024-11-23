@@ -3,7 +3,7 @@
 import { SaleDto } from "@/app/_data-access/sale/get-sales";
 import { formatCurrency } from "@/app/_helpers/currency";
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontalIcon } from "lucide-react";
+import TableDropdownMenu from "./table-dropdown-menu";
 
 export const columns: ColumnDef<SaleDto>[] = [
   {
@@ -16,15 +16,16 @@ export const columns: ColumnDef<SaleDto>[] = [
   },
   {
     header: "Valor Total",
-    cell: ({ row: { original } }) => formatCurrency(original.totalAmount),
+    cell: ({ row: { original: sale } }) => formatCurrency(sale.totalAmount),
   },
   {
     accessorKey: "date",
     header: "Data",
-    cell: ({ row: { original } }) => original.date.toLocaleDateString("pt-BR"),
+    cell: ({ row: { original: sale } }) =>
+      sale.date.toLocaleDateString("pt-BR"),
   },
   {
     header: "Ações",
-    cell: () => <MoreHorizontalIcon size={16} />,
+    cell: ({ row: { original: sale } }) => <TableDropdownMenu sale={sale} />,
   },
 ];
