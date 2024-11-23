@@ -3,6 +3,7 @@
 import { SaleDto } from "@/app/_data-access/sale/get-sales";
 import { formatCurrency } from "@/app/_helpers/currency";
 import { ColumnDef } from "@tanstack/react-table";
+import { MoreHorizontalIcon } from "lucide-react";
 
 export const columns: ColumnDef<SaleDto>[] = [
   {
@@ -24,6 +25,6 @@ export const columns: ColumnDef<SaleDto>[] = [
   },
   {
     header: "Ações",
-    cell: () => <p>Editar</p>,
+    cell: () => <MoreHorizontalIcon size={16} />,
   },
 ];
