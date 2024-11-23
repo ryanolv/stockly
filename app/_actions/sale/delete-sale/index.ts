@@ -28,7 +28,5 @@ export const deleteSale = async ({ id }: DeleteSaleSchema) => {
       });
     }
   });
-  revalidatePath("/sales");
-  revalidatePath("/products");
-  revalidatePath("/");
+  revalidatePath("/", "layout");
 };
